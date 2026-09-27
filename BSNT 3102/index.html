@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Exercises</title>
+</head>
+
+<body>
+
+    <!-- Exercise 2 -->
+    <div id="student_message">
+        Show your message here.
+    </div>
+
+    <script>
+        console.log("This is ntTwo.js");
+
+        var firstName = "Jaspher";
+        var lastName = "Padua";
+        var birthYear = 2006;
+
+        var currentYear = new Date().getFullYear();
+        var age = currentYear - birthYear;
+
+        document.getElementById("student_message").innerHTML =
+            "Hi, my name is " + firstName + " " + lastName +
+            ", I'm " + age + " years old and I'm learning Javascript.";
+
+        var phone1 = "01";
+        var phone2 = "02";
+        var phone3 = 876543123;
+
+        if (phone1.toString().length == 2) {
+            console.log("phone1 is valid");
+        } else {
+            console.log("phone1 is invalid");
+        }
+
+        if (phone1.toString().length == 20) {
+            console.log("phone1 is valid");
+        } else {
+            console.log("phone1 is invalid");
+        }
+
+        var url = "www.ntTwo.com";
+        url = "https://" + url;
+
+        console.log(url);
+    </script>
+</body>
+</html>

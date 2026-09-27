@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap Navbar Lesson</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      color: #172033;
+      background: #f4f6f9;
+      font-family: "Roboto Condensed", sans-serif;
+    }
+
+    .navbar-brand {
+      color: #182a49;
+      letter-spacing: .02em;
+    }
+
+    .navbar-brand i {
+      color: #3d83e6;
+    }
+
+    .navbar .nav-link {
+      font-weight: 500;
+    }
+
+    .navbar .nav-link.active {
+      color: #2166bd;
+    }
+
+    .carousel-item {
+      background: #172033;
+    }
+    .carousel-item img {
+      height: clamp(240px, 38vw, 360px);
+      object-fit: cover;
+    }
+
+    .card-img-top {
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .card {
+      overflow: hidden;
+      border-radius: 14px;
+      background: #fff;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 1rem 1.8rem rgba(23, 32, 51, .16) !important;
+    }
+
+    .card-body {
+      padding: 1rem;
+    }
+
+    .card-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      margin-bottom: .9rem;
+      border-radius: 50%;
+      font-size: 1.1rem;
+    }
+
+    .card-orange {
+      border: 2px solid #ed8a2f;
+    }
+
+    .card-teal {
+      border: 2px solid #159b9b;
+    }
+
+    .card-blue {
+      border: 2px solid #3d83e6;
+    }
+
+    .card-magenta {
+      border: 2px solid #c33b9b;
+    }
+
+    .card-orange .card-title,
+    .card-orange .btn {
+      color: #c75e08;
+    }
+
+    .card-orange .card-icon {
+      color: #c75e08;
+      background: #fff0df;
+    }
+
+    .card-teal .card-title,
+    .card-teal .btn {
+      color: #087878;
+    }
+
+    .card-teal .card-icon {
+      color: #087878;
+      background: #ddf5f3;
+    }
+
+    .card-blue .card-title,
+    .card-blue .btn {
+      color: #2166bd;
+    }
+
+    .card-blue .card-icon {
+      color: #2166bd;
+      background: #e5efff;
+    }
+
+    .card-magenta .card-title,
+    .card-magenta .btn {
+      color: #a6297e;
+    }
+
+    .card-magenta .card-icon {
+      color: #a6297e;
+      background: #fbe5f5;
+    }
+
+    .card-orange .btn,
+    .card-teal .btn,
+    .card-blue .btn,
+    .card-magenta .btn {
+      border-color: currentColor;
+      background: transparent;
+      font-weight: 600;
+    }
+
+    .card-orange .btn:hover,
+    .card-teal .btn:hover,
+    .card-blue .btn:hover,
+    .card-magenta .btn:hover {
+      color: #fff;
+    }
+
+    .card-orange .btn:hover { background: #c75e08; }
+    .card-teal .btn:hover { background: #087878; }
+    .card-blue .btn:hover { background: #2166bd; }
+    .card-magenta .btn:hover { background: #a6297e; }
+
+    .contact-panel {
+      max-width: 760px;
+      background: #fff;
+      border: 1px solid #e0e6ef;
+      border-radius: 16px;
+      box-shadow: 0 .75rem 2rem rgba(23, 32, 51, .08);
+    }
+
+    .cards-box {
+      max-width: 1240px;
+      background: rgba(255, 255, 255, .94);
+      border: 1px solid #e0e6ef;
+      border-radius: 18px;
+      box-shadow: 0 1rem 2.5rem rgba(23, 32, 51, .12);
+    }
+
+    .cards-box .row {
+      --bs-gutter-x: 1rem;
+      --bs-gutter-y: 1rem;
+    }
+
+    .contact-panel .form-control {
+      border-color: #d8e0eb;
+    }
+
+    .contact-panel .form-control:focus {
+      border-color: #3d83e6;
+      box-shadow: 0 0 0 .2rem rgba(61, 131, 230, .14);
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#"><i class="bi bi-stars me-2"></i>Studio North</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+  </nav>
+
+  <div class="container-fluid px-0">
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../assets/cocwebbg.jpg" class="d-block w-100" alt="Clash of Clans background artwork">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <section class="cards-box container my-5 p-3 p-md-4">
+    <div class="text-center mb-4">
+      <span class="text-primary text-uppercase fw-semibold small">Explore our services</span>
+      <h1 class="h2 mt-2 mb-0">Care designed around you</h1>
+    </div>
+    <div class="row row-cols-4">
+      <div class="col">
+        <div class="card card-orange h-100 shadow-sm">
+          <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8c9c3684-1124-4459-a82b-f1c63f6abf07/dkfjnlu-016260ad-fbab-4a68-85a0-aa7512f5f84e.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi84YzljMzY4NC0xMTI0LTQ0NTktYTgyYi1mMWM2M2Y2YWJmMDcvZGtmam5sdS0wMTYyNjBhZC1mYmFiLTRhNjgtODVhMC1hYTc1MTJmNWY4NGUuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.u1_w62yZ2pZ4pw-y5Rz2YIVPdFNT9bZcNNkIH4G_bE8" class="card-img-top" alt="Dental clinic interior">
+          <div class="card-body d-flex flex-column">
+            <span class="card-icon"><i class="bi bi-heart-pulse"></i></span>
+            <h5 class="card-title">Comfortable care</h5>
+            <p class="card-text">A welcoming space designed to make every visit feel easy.</p>
+            <a href="#" class="btn btn-primary mt-auto">Learn more</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card card-teal h-100 shadow-sm">
+          <img src="https://wallpapers-clan.com/wp-content/uploads/2024/04/deku-storm-mha-anime-gif-preview-desktop-wallpaper.gif" class="card-img-top" alt="Bright clinic scene">
+          <div class="card-body d-flex flex-column">
+            <span class="card-icon"><i class="bi bi-lightning-charge"></i></span>
+            <h5 class="card-title">Modern treatment</h5>
+            <p class="card-text">Thoughtful services and technology for a healthier smile.</p>
+            <a href="#" class="btn btn-primary mt-auto">Explore care</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card card-blue h-100 shadow-sm">
+          <img src="https://giffiles.alphacoders.com/222/222571.gif" class="card-img-top" alt="Friendly care team artwork">
+          <div class="card-body d-flex flex-column">
+            <span class="card-icon"><i class="bi bi-people"></i></span>
+            <h5 class="card-title">Expert team</h5>
+            <p class="card-text">Meet caring professionals who put your comfort first.</p>
+            <a href="" class="btn btn-primary mt-auto">Meet the team</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card card-magenta h-100 shadow-sm">
+          <img src="https://wallpaperaccess.com/full/20458249.gif" class="card-img-top" alt="Patient appointment space">
+          <div class="card-body d-flex flex-column">
+            <span class="card-icon"><i class="bi bi-calendar2-check"></i></span>
+            <h5 class="card-title">Book a visit</h5>
+            <p class="card-text">Take the next step toward a confident, brighter smile.</p>
+            <a href="" class="btn btn-primary mt-auto">Book now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container pb-5">
+    <div class="contact-panel mx-auto p-4 p-md-5">
+      <div class="text-center mb-4">
+        <span class="text-primary fw-semibold text-uppercase small">Stay connected</span>
+        <h2 class="h3 mt-2 mb-2">Have a question?</h2>
+        <p class="text-secondary mb-0">Send us a message and our team will get back to you.</p>
+      </div>
+      <form>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="formGroupExampleInput" class="form-label fw-semibold">Your Name</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter your name">
+          </div>
+          <div class="col-md-6">
+            <label for="formGroupExampleInput2" class="form-label fw-semibold">Your Email</label>
+            <input type="email" class="form-control" id="formGroupExampleInput2" placeholder="Enter your email">
+          </div>
+          <div class="col-12">
+            <label for="formGroupExampleInput3" class="form-label fw-semibold">Contact Message</label>
+            <textarea class="form-control" id="formGroupExampleInput3" rows="4" placeholder="Enter your contact message"></textarea>
+          </div>
+          <div class="col-12 text-end">
+            <button class="btn btn-primary px-4" type="submit">Send message <i class="bi bi-arrow-right ms-1"></i></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

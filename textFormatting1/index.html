@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Text Formatting</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            html,
+            body {
+                margin: 0;
+                min-height: 100%;
+            }
+
+            .akoto     {
+                font-size: 25px;
+                font-family: "Times New Roman", serif;
+                font-weight: bold;
+                background-color: #e9e9ac;
+                width: 220px;
+                text-align: center;
+                padding: 8px 10px;
+                position: absolute;
+                top: 16px;
+                left: 5px;
+                z-index: 1;
+            }
+
+            .akoto a {
+                color: inherit;
+                text-decoration: none;
+            }
+
+            body     {
+                background-color: #111;
+                min-height: 100vh;
+                overflow-x: hidden;
+            }
+
+            #jaspher     {
+               font-family: Times New Roman, serif;
+               font-size: 16px;
+            }
+
+            .akoto1     {
+                color: rgb(38, 9, 206);
+                font-size: 16px;
+            }
+
+            #akoto2     {
+                font-style: italic;
+                background-color: #e9e9ac;
+                font-size: 13px;
+                padding: 28px 16px;
+                width: 430px;
+                margin: 0;
+                position: absolute;
+                top: 68px;
+                left: 5px;
+                border-left: 2px dashed rgba(11, 9, 24, 0.728);
+                border-right: 2px dashed rgba(11, 9, 24, 0.728);
+                border-top: 2px solid black;
+                border-bottom: 2px solid rgba(11, 9, 24, 0.728);
+                line-height: 1.18;
+            }
+
+            .akoto3     {
+                    position: relative;
+                    min-height: 100vh;
+                    margin-left: 52px;
+                    background-image: url("../assets/image.jpg");
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+            }
+
+            #jaspher1     {
+               background-color: rgb(216, 211, 211);
+            }
+
+            #jaspher3     {
+               background-color: rgb(167, 158, 158);
+            }
+        </style>
+
+
+    </head>
+    <body>
+        <div class="akoto3">
+        <header class="akoto">
+            <a href="https://en.wikipedia.org/wiki/Computer" target="_blank" rel="noopener noreferrer">
+                <strong>What is computer</strong>
+            </a>
+        </header>
+        <p id="akoto2">
+            A computer is an electronic device that manipulates information,<mark id="jaspher1">or data. It<br> 
+            has the</mark> <mark id="jaspher3"><strong id="jaspher">ability to  store, retrieve, an</mark></strong><strong class="akoto1">d process data.  </strong>You may<br> 
+            already know that you can use a computer to type documents, send email,<br>
+            play games, and browse the Web. You can also use it to edit or create<br>
+            spreadsheets, presentations, and even videos.
+        </p>
+        </div>
+    </body>
+</html>
